@@ -1,0 +1,280 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #000000; /* OLED-perfect black */
+    color: #FFFFFF; /* White text */
+    overflow-x: hidden;
+}
+
+.container {
+    background: #000000; /* Unified black background */
+    padding: 20px;
+    border: 1px solid #FFFFFF; /* White border */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    max-width: 600px;
+    margin: 0 auto;
+    color: #FFFFFF; /* Unified text color */
+}
+
+h1 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.6em;
+    margin: 15px 0;
+}
+
+.setup {
+    margin: 10px 0;
+}
+
+.setup label {
+    display: block;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.setup input {
+    padding: 8px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100px;
+    background: #000000;
+    color: #FFFFFF;
+}
+
+#playerTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    background: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+
+#playerTable th, #playerTable td {
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: left;
+}
+
+#playerTable th {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+#playerTable td {
+    color: #FFFFFF;
+}
+
+#playerTable .total-chips {
+    font-weight: bold;
+}
+
+.player-name {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #000000;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.player-name::placeholder {
+    color: #A9A9A9; /* Light gray placeholder */
+}
+
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100px;
+    background: #000000;
+    color: #FFFFFF;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background: #000000;
+    color: #FFFFFF;
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.action-button {
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background: #000000;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    background: #222222;
+}
+
+.action-button:active {
+    transform: translateY(1px);
+}
+
+.action-button.add {
+    background: #E0E0E0; /* Light gray to match Transfer button */
+    color: #000000; /* Black text */
+    border: none;
+    border-radius: 25px; /* Pill shape */
+}
+
+.action-button.end {
+    background: #C6FF00; /* Yellow-green for End Game */
+    color: #000000; /* Black text */
+    border: none;
+    border-radius: 25px; /* Pill shape */
+}
+
+.action-button.start {
+    background: #E0E0E0; /* Light gray from Transfer button */
+    color: #000000; /* Black text */
+    border: none;
+    border-radius: 25px; /* Pill shape */
+    width: 100%;
+    margin: 10px 0;
+}
+
+.action-button.reset {
+    background: #d32f2f;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: left;
+}
+
+th {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+td {
+    color: #FFFFFF;
+}
+
+#results p {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.warning {
+    background: #d32f2f;
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.info {
+    background: #388e3c;
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.suspicious {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.donga {
+    background: #000000;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#profitLossChart {
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    input {
+        width: 80px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .action-button {
+        width: 100%;
+    }
+}

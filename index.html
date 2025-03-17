@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Poker Night Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Poker Night Tracker</h1>
+        
+        <div id="setup" class="setup">
+            <label>Buy-in Amount ($): <input type="number" id="buyInAmount" min="1"></label>
+            <label>Chips per Buy-in: <input type="number" id="chipsPerBuyIn" min="1"></label>
+            <button onclick="startGame()" class="action-button start">Start Game</button>
+        </div>
+
+        <div id="gameArea" class="hidden">
+            <div id="playerInputs">
+                <table id="playerTable">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Buy-ins</th>
+                            <th>Chips Taken</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playerTableBody"></tbody>
+                </table>
+            </div>
+            <div class="button-group">
+                <button onclick="addPlayer()" class="action-button add">Add Player</button>
+                <button onclick="endGame()" class="action-button end">End Game</button>
+            </div>
+        </div>
+
+        <div id="results" class="hidden">
+            <h2>Game Results</h2>
+            <div id="resultsTable"></div>
+            <p>Total Pot: $<span id="totalPool">0</span></p>
+            <canvas id="profitLossChart" width="400" height="200"></canvas>
+            <button onclick="resetApp()" class="action-button reset">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered', reg))
+                    .catch(err => console.log('Service Worker registration failed', err));
+            });
+        }
+    </script>
+</body>
+</html>
